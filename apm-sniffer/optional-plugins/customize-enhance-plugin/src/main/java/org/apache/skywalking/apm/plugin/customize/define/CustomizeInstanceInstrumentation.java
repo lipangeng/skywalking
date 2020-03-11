@@ -25,6 +25,7 @@ import org.apache.skywalking.apm.agent.core.plugin.interceptor.InstanceMethodsIn
 import org.apache.skywalking.apm.agent.core.plugin.interceptor.enhance.ClassInstanceMethodsEnhancePluginDefine;
 import org.apache.skywalking.apm.agent.core.plugin.match.ClassMatch;
 import org.apache.skywalking.apm.agent.core.plugin.match.NameMatch;
+import org.apache.skywalking.apm.agent.core.plugin.match.PrefixMatch;
 import org.apache.skywalking.apm.plugin.customize.conf.CustomizeConfiguration;
 
 /**
@@ -73,6 +74,6 @@ public class CustomizeInstanceInstrumentation extends ClassInstanceMethodsEnhanc
 
     @Override
     protected ClassMatch enhanceClass() {
-        return NameMatch.byName(enhanceClass);
+        return PrefixMatch.nameStartsWith(enhanceClass);
     }
 }
