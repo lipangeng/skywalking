@@ -277,7 +277,7 @@ public enum CustomizeConfiguration {
      */
     private ElementMatcher parserMethodsMatcher(Map<String, Object> configuration) {
         String[] arguments = MethodConfiguration.getArguments(configuration);
-        ElementMatcher matcher = named(MethodConfiguration.getMethodName(configuration)).and(takesArguments(arguments.length));
+        ElementMatcher matcher = nameMatches(MethodConfiguration.getMethodName(configuration)).and(takesArguments(arguments.length));
         if (arguments.length > 0) {
             for (int i = 0; i < arguments.length; i++) {
                 matcher = ((ElementMatcher.Junction) matcher).and(
