@@ -24,6 +24,7 @@ import org.apache.skywalking.apm.agent.core.plugin.interceptor.StaticMethodsInte
 import org.apache.skywalking.apm.agent.core.plugin.interceptor.enhance.ClassStaticMethodsEnhancePluginDefine;
 import org.apache.skywalking.apm.agent.core.plugin.match.ClassMatch;
 import org.apache.skywalking.apm.agent.core.plugin.match.NameMatch;
+import org.apache.skywalking.apm.agent.core.plugin.match.PrefixMatch;
 import org.apache.skywalking.apm.plugin.customize.conf.CustomizeConfiguration;
 
 /**
@@ -68,6 +69,6 @@ public class CustomizeStaticInstrumentation extends ClassStaticMethodsEnhancePlu
 
     @Override
     protected ClassMatch enhanceClass() {
-        return NameMatch.byName(enhanceClass);
+        return PrefixMatch.nameStartsWith(enhanceClass);
     }
 }

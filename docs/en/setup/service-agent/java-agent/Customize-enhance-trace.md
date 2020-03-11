@@ -59,8 +59,8 @@ Implementing enhancements to custom classes requires two steps.
 
 	| configuration  | explanation |
 	|:----------------- |:---------------|
-	| class_name | The enhanced class |
-	| method | The interceptor method of the class |
+	| class_name | The enhanced class, use prefix model |
+	| method | The interceptor method of the class, use prefix model |
 	| operation_name | If fill it out, will use it instead of the default operation_name. |
 	| operation_name\_suffix | What it means adding dynamic data after the operation_name. |
 	| static | Is this method static. |
